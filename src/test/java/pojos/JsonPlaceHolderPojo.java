@@ -57,4 +57,11 @@ public class JsonPlaceHolderPojo {
                 ", completed=" + completed +
                 '}';
     }
+
+    /*
+    How Do We handle different key-values in response?
+    We use @JsonIgnoreProperties(ignoreUnknown = true) annotation  at the top of the Pojo class
+    It comes from "org.codehaus.jackson.annotate.JsonIgnoreProperties"
+     */
+    
 }

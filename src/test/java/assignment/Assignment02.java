@@ -4,6 +4,8 @@ import base_urls.RegresBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.*;
 
@@ -35,9 +37,12 @@ public class Assignment02 extends RegresBaseUrl {
         response.prettyPrint();
 
         //Do Assertion
-        response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
-        assertEquals("cloudflare", response.getHeader("Server"));
-        assertFalse(response.asString().isEmpty());
+        assertEquals(404, response.statusCode());
+        assertEquals("HTTP/1.1 404 Not Found",response.statusLine());
+        assertEquals("cloudflare",response.getHeader("Server"));
+        assertEquals(0, response.asString().replaceAll("[^A-Za-z0-9]", "").length());
+        assertEquals(0,response.as(HashMap.class).size());
+
 
 
 
