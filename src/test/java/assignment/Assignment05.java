@@ -12,11 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class Assignment05 extends RegresBaseUrl{
      /*
         Given
-          https://reqres.in/api/unknown/3
+
+
         When
             User send a GET request to the URL
         Then
@@ -70,7 +72,6 @@ public class Assignment05 extends RegresBaseUrl{
         softAssert.assertEquals(jsonPath.getString("data.pantone_value"), "19-1664", "pantone_value did not match");
         softAssert.assertEquals(jsonPath.getString("support.url"), "https://reqres.in/#support-heading", "url did not match");
         softAssert.assertEquals(jsonPath.getString("support.text"), "To keep ReqRes free, contributions towards server costs are appreciated!", "text did not match");
-
         softAssert.assertAll();
 
 

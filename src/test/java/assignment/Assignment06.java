@@ -44,7 +44,7 @@ public class Assignment06 extends RegresBaseUrl {
         JsonPath jsonPath = response.jsonPath();
 
             // Print all pantone_values
-        List<Integer> pantone_values = jsonPath.getList("data.pantone_value");
+        List<String> pantone_values = jsonPath.getList("data.pantone_value");
         System.out.println("pantone_values = " + pantone_values);
 
 
@@ -64,6 +64,9 @@ public class Assignment06 extends RegresBaseUrl {
         }
         System.out.println("idsGreaterThan3 =" + idsGreaterThan3);
         assertEquals(3, idsGreaterThan3.size());
+
+        //2nd Way:Groovy Language:
+        // List<Integer> idsGreaterThan3 = jsonPath.getList("data.findAll{it.id>3}.id");
 
             //Print all names whose ids are less than 3 on the console
             //        Assert that the number of names whose ids are less than 3 is 2

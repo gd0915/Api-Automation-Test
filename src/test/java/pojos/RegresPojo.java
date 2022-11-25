@@ -8,6 +8,7 @@ public class RegresPojo {
     private String name;
     private String job;
 
+
     public RegresPojo(String name, String job) {
         this.name = name;
         this.job = job;

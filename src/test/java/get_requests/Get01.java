@@ -15,7 +15,8 @@ public class Get01 {
             To type test cases we use 'Gherkin Language'
             The keywords are    x) Given: It is for pre-conditions(like URL, EndPoint, body)
                                 y) When: It is used for actions (e.g. get request, put request..)
-                                z) Then: It is used for outputs. (What do we expect from testing)
+                                z) Then
+                                : It is used for outputs. (What do we expect from testing)
                                 t) And: It is used for multiple given, when, and then.
         c) Start to type Automation Script
             i)    Set the URL

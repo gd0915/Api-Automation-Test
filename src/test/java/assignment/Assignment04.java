@@ -24,7 +24,7 @@ public class Assignment04 extends HerOkuAppBaseUrl {
         public void assignment04() {
         //Set the url
         spec.pathParam("first", "booking").
-                queryParams("firstname", "Elena", "second", "Zaitsava");
+                queryParams("firstname", "Brandon", "second", "Wilson");
 
         //Set the expected data
 

@@ -41,12 +41,9 @@ public class Assignment02 extends RegresBaseUrl {
         assertEquals("HTTP/1.1 404 Not Found",response.statusLine());
         assertEquals("cloudflare",response.getHeader("Server"));
         assertEquals(0, response.asString().replaceAll("[^A-Za-z0-9]", "").length());
-        assertEquals(0,response.as(HashMap.class).size());
 
-
-
-
-
+        //assertEquals(0,response.as(HashMap.class).size());
+        //assertTrue(response.as(HashMap.class).isEmpty());
 
 
 

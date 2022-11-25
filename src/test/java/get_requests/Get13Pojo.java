@@ -20,23 +20,24 @@ public class Get13Pojo extends GoRestBaseUrl {
         And
             Response body should be like
                                            {
-                        "meta": null,
-                        "data": {
-                            "id": 13,
-                            "name": "Rahul Jha",
-                            "email": "jha_rahul@beahan.co",
-                            "gender": "male",
-                            "status": "active"
+                         "meta": null,
+                            "data": {
+                                "id": 131,
+                                "name": "Prem Pilla",
+                                "email": "pilla_prem@mueller.info",
+                                "gender": "female",
+                                "status": "active"
+    }
     }
 }
      */
     @Test
     public void get13(){
         //Set the url
-        spec.pathParams("first", "users", "second", 13);
+        spec.pathParams("first", "users", "second", 131);
 
         //Set the expected data
-        GoRestDataPojo goRestDataPojo = new GoRestDataPojo("Rahul Jha", "jha_rahul@beahan.co", "male", "active");
+        GoRestDataPojo goRestDataPojo = new GoRestDataPojo("Prem Pilla", "pilla_prem@mueller.info", "female", "active");
         GoRestPojo expectedData = new GoRestPojo(null, goRestDataPojo);
         System.out.println("expectedData = " + expectedData);
 
