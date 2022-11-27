@@ -7,9 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class AuthenticationHerOkuApp {
-
+    public static void main(String[] args) {
+        System.out.println(generateToken());
+    }
 
     public static String generateToken(){
         String url = "https://restful-booker.herokuapp.com/auth";
