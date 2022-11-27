@@ -12,15 +12,17 @@ public class JsonUtils {
         mapper = new ObjectMapper();
     }
     //This method will accept two parameters and convert first parameter to second parameter data type by using ObjectMapper class.
-    public static <T> T convertJsonJavaObject(String json, Class<T> cls){
+    public static <T> T convertJsonToJavaObject(String json, Class<T> cls){//Generic Method
         T javaResult = null;
         try {
             javaResult = mapper.readValue(json, cls);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return javaResult;
     }
+
+    //Generic Method: If a method return "any data type", it is called generic data. ==> Any Type ==> T
 
 
 

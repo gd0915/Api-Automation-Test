@@ -37,7 +37,7 @@ public class Get16 extends HerOkuAppBaseUrl {
 
         //Set the expected data
         String expectedDataInString = new HerOkuAppTestData().expectedDataInString("Edgar", "Dominguez", 111, true, "2018-01-01", "2019-01-01", "Breakfast");
-        BookingPojo expectedData = JsonUtils.convertJsonJavaObject(expectedDataInString, BookingPojo.class);
+        BookingPojo expectedData = JsonUtils.convertJsonToJavaObject(expectedDataInString, BookingPojo.class);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
@@ -45,7 +45,7 @@ public class Get16 extends HerOkuAppBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        BookingPojo actualData = JsonUtils.convertJsonJavaObject(response.asString(), BookingPojo.class);//To use Pojo Class with Object Mapper is the best!!!
+        BookingPojo actualData = JsonUtils.convertJsonToJavaObject(response.asString(), BookingPojo.class);//To use Pojo Class with Object Mapper is the best!!!
         System.out.println("actualData = " + actualData);
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getFirstname(), actualData.getFirstname());

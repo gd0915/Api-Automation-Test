@@ -32,7 +32,7 @@ public class Get15ObjectMapperPojo extends JsonPlaceHolderBaseUrl {
 
         //Set the expected data
         String expectedDataInString = new JsonPlaceHolderTestData().expectedDataInString(10,"quis eius est sint explicabo", true);
-        JsonPlaceHolderPojo expectedData = JsonUtils.convertJsonJavaObject(expectedDataInString, JsonPlaceHolderPojo.class);
+        JsonPlaceHolderPojo expectedData = JsonUtils.convertJsonToJavaObject(expectedDataInString, JsonPlaceHolderPojo.class);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
@@ -40,7 +40,7 @@ public class Get15ObjectMapperPojo extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        JsonPlaceHolderPojo actualData = JsonUtils.convertJsonJavaObject(response.asString(), JsonPlaceHolderPojo.class);
+        JsonPlaceHolderPojo actualData = JsonUtils.convertJsonToJavaObject(response.asString(), JsonPlaceHolderPojo.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(200, response.statusCode());

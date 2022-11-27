@@ -43,7 +43,7 @@ public class Get15ObjectMapper extends JsonPlaceHolderBaseUrl {
                 */
 
         String expectedDataInString = new JsonPlaceHolderTestData().expectedDataInString(10,"quis eius est sint explicabo",true);
-        Map<String, Object> expectedData = JsonUtils.convertJsonJavaObject(expectedDataInString, HashMap.class);
+        Map<String, Object> expectedData = JsonUtils.convertJsonToJavaObject(expectedDataInString, HashMap.class);
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
@@ -52,7 +52,7 @@ public class Get15ObjectMapper extends JsonPlaceHolderBaseUrl {
 
         //Do Assertion
         //String expectedDataInString = new JsonPlaceHolderTestData().expectedDataInString(10,"quis eius est sint explicabo", true);
-        Map<String, Object> actualData = JsonUtils.convertJsonJavaObject(response.asString(), HashMap.class);
+        Map<String, Object> actualData = JsonUtils.convertJsonToJavaObject(response.asString(), HashMap.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(200, response.statusCode());
