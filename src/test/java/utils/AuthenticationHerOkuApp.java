@@ -25,4 +25,6 @@ public class AuthenticationHerOkuApp {
 
         return response.jsonPath().getString("token");
     }
+    //getString() method returns us the value of "token"(key)
+
 }

@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
+import static utils.AuthenticationHerOkuApp.generateToken;
 
 public class Delete02_copy extends HerOkuAppBaseUrl {
 /*
@@ -20,7 +21,7 @@ public class Delete02_copy extends HerOkuAppBaseUrl {
     @Test
     public void delete02(){
         //Set the url
-        spec.pathParams("first", "booking", "second", 22910);
+        spec.pathParams("first", "booking", "second", 23467);
 
         //Set the expected data
         String expectedData = "Created";
@@ -28,7 +29,7 @@ public class Delete02_copy extends HerOkuAppBaseUrl {
         //Send the request and get the response
         Response response = given().
                                 spec(spec).
-                                headers("Cookie", "token=1d2209034d5e437").
+                                headers("Cookie", "token= " + generateToken()).
                                 when().
                                 delete("/{first}/{second}");
         response.prettyPrint();
